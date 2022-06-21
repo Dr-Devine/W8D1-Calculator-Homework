@@ -4,8 +4,17 @@ describe("Calculator", () => {
   })
 
   it('should have working number buttons', () => {
+    cy.get('#number1').click();
     cy.get('#number2').click();
-    cy.get('.display').should('contain', '2')
+    cy.get('#number3').click();
+    cy.get('#number4').click();
+    cy.get('#number5').click();
+    cy.get('#number6').click();
+    cy.get('#number7').click();
+    cy.get('#number8').click();
+    cy.get('#number9').click();
+    cy.get('#number0').click();
+    cy.get('.display').should('contain', '1234567890')
   });
 
   it('should have updating running total display' ,() => {

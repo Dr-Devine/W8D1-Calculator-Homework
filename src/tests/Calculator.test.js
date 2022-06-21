@@ -92,7 +92,9 @@ describe('Calculator', () => {
     fireEvent.click(button8);
     fireEvent.click(button7);
     fireEvent.click(button9);
-    expect(runningTotal.textContent).toEqual('21879');
+    fireEvent.click(button0);
+    fireEvent.click(button6);
+    expect(runningTotal.textContent).toEqual('2187906');
   });
 
   it('Should be able to chain multiple operations together', () => {
@@ -111,8 +113,14 @@ describe('Calculator', () => {
 
   it('Should be able to clear the running total without affecting the calculation', () => {
     fireEvent.click(button7);
+    fireEvent.click(multiply);
+    fireEvent.click(button2);
+    fireEvent.click(equals);
     fireEvent.click(clear);
-    expect(runningTotal.textContent).toEqual('0');
+    fireEvent.click(multiply);
+    fireEvent.click(button2);
+    fireEvent.click(equals);
+    expect(runningTotal.textContent).toEqual('28');
   });
 })
 
